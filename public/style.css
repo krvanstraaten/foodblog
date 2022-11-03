@@ -1,0 +1,199 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/* navigatie bar */
+a:link {
+    text-decoration: none;
+}
+#navbar {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #000563;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+        
+.navitem a {
+    display: block;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+#navbar img {
+    height: 3em;
+    margin: 5px;
+    display: flex;
+}
+
+.navitem a:hover {
+  background-color: #0009b3;
+}
+
+.end {
+    margin-left: auto;
+}
+
+/* main pagina content */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content li {
+    margin-left: 2%;
+}
+
+h1 {
+    width: 97%;
+    padding: .5% 0% .5% 3%;
+    margin-bottom: 1em;
+    box-shadow: 0 3px 1px -2px #0003;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 2em;
+}
+caption {
+    font-size: 1.5em;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+tr {
+    border: 1px solid lightgray;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+.tableContent:hover {
+    background-color: #e6e6e6;
+}
+td, th, caption {
+    padding: 0.4em;
+    padding-left: 3em;
+    padding-right: 3em;
+    text-align: left;
+}
+
+/* form en inputs */
+form, .cart {
+    width: 50%;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    display: flex;
+    flex-direction: column;
+    padding: 1% 3% 1% 3%;
+} 
+input, select, textarea, .back, .next {
+    padding: 5px;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+label {
+    margin-top: 2%;
+    font-size: 1.2em;
+
+}
+
+/* sub pagina content */
+.link{
+    width: 50%;
+    margin: 1%;
+}
+
+.bottum {
+    width: 50%;
+}
+.recipecarts {
+    display: flex;
+    flex-flow: row wrap;
+}
+.cart{
+    width: 10em;
+    min-height: 5em;
+    height: fit-content;
+    margin: 5px;
+
+}
+.cart a {
+    display: flex;
+    align-self: end;
+}
+
+/* buttons */
+.buttons, .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.back, .next {
+    margin: 5px;
+    text-decoration: none;
+}
+.back {
+    color: blue;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+}
+.next {
+    color: white;
+    background-color: blue;
+    border: none;
+    box-shadow: none;
+}
+.blue_link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+}
+.blue_link a {
+    font-size: 1.2em;
+    color: blue;
+}
+
+/* error */
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    font-size: 1.7em;
+    padding: .3em;
+    border-radius: 5px;
+}
+
+/* style for funzies */
+.easy, .medium, .hard, .expert{
+    width: fit-content;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.easy{
+    background-color: rgba(180, 255, 180, 0.804);
+    color: rgb(29, 107, 29);
+
+}
+.medium{
+    background-color: rgba(249, 249, 140, 0.821);
+    color: rgb(173, 157, 83);
+}
+.hard{
+    background-color: rgba(251, 163, 163, 0.782);
+    color: rgb(175, 2, 2);
+
+}
+.expert{
+    background-color: rgba(81, 62, 252, 0.595);
+    color: rgb(58, 0, 102);
+}

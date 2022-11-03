@@ -1,0 +1,39 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}
+	{{item.name}}
+{% endblock %}
+
+{% block content %}
+	<h1>Kitchens</h1>
+	<div class="link">
+		<a class="back" href="/kitchen">Back</a>
+		{% if user.id %}
+			<a class="next" href="/kitchen/edit?id={{item.id}}">Edit</a>
+		{% endif %}
+	</div>
+	<table>
+		<caption>{{item.name}}</caption>
+		<tr>
+			<th scope="row">Description</th>
+			<td>{{item.description}}</td>
+		</tr>
+	</table>
+
+	<div class="bottum">
+		<h2>Recipes</h2>
+		<div class="recipecarts">
+			{% for recipe in recipes %}
+				<div class="cart">
+					<h3>
+						<b>{{recipe.name}}</b>
+					</h3>
+					<p>{{recipe.type}}</p>
+					<p class="{{recipe.level}}">{{recipe.level}}</p>
+					<a href="/recipe/show?id={{recipe.id}}">show</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}
+	{{recipe.name}}
+{% endblock %}
+
+{% block content %}
+	<h1>New recipe</h1>
+
+	<form method="post" action="/recipe/createPost">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" placeholder="New recipe">
+
+		<label for="type">Type:</label>
+		<select id="type" name="type">
+			{% for type in types %}
+				<option value="{{ type|e }}">{{ type|e }}</option>
+			{% endfor %}
+		</select>
+
+		<label for="kitchen">Kitchen:</label>
+		<select id="kitchen" name="kitchen">
+			{% for kitchen in kitchens %}
+				<option value="{{ kitchen.name }}">{{ kitchen.name }}</option>
+			{% endfor %}
+		</select>
+
+		<label for="level">Level:</label>
+		<select id="level" name="level">
+			{% for level in levels %}
+				<option value="{{ level|e }}">{{ level|e }}</option>
+			{% endfor %}
+		</select>
+
+		<div class="buttons">
+			<a class="back" href="/recipe">Back</a>
+			<input class="next" type="submit" value="Create">
+		</div>
+	</form>
+{% endblock %}

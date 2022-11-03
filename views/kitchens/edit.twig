@@ -1,0 +1,22 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}
+	{{item.name}}
+{% endblock %}
+
+{% block content %}
+	<h1>New recipe</h1>
+
+	<form method="post" action="/kitchen/editPost?id={{item.id}}">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" value="{{item.name}}">
+
+		<label for="description">Description:</label>
+		<textarea id="description" name="description" rows="4" cols="50">{{item.description}}</textarea>
+
+		<div class="buttons">
+			<input class="back" href="/kitchen">
+			<input class="next" type="submit" value="Edit">
+		</div>
+	</form>
+{% endblock %}

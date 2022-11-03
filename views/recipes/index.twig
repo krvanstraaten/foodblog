@@ -1,0 +1,37 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}Recipes
+{% endblock %}
+
+{% block content %}
+	<h1>Recipes</h1>
+	{% set recipes = entities|first %}
+	<div class="link">
+		{% if user.id %}
+			<a class="next" href="/recipe/create">Create new</a>
+		{% endif %}
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Type</th>
+				<th scope="col">Level</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in entities %}
+				<tr class="tableContent">
+					<td>
+						<a href="/recipe/show?id={{item.id}}">{{item.name}}</a>
+					</td>
+					<td>{{item.type}}</td>
+					<td>
+						<p class="{{item.level}}">{{item.level}}</p>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</tbody>
+</table>{% endblock %}

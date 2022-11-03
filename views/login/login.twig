@@ -1,0 +1,33 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}Login
+{% endblock %}
+
+{% block content %}
+
+	<form method="post" action="/user/loginPost" style="margin-top:5em">
+		<div style="display:flex; flex-direction:column; align-items:center;">
+			<img alt="Bit Academy Logo" src="https://ams.jarvis.bit-academy.nl/assets/images/logo_black.svg" width="200">
+			<b>
+				<h2 style="font-size:2.5em">Log into your account</h2>
+			</b>
+		</div>
+		{# login form #}
+		<label for="name" aria-label="User name"></label>
+		<input type="text" id="name" name="name" placeholder="User name">
+		<label for="psw" aria-label="Password"></label>
+		<input type="password" id="psw" name="psw" placeholder="Password">
+		{% if  message %}
+			<div class="error">
+				<p>{{message}}</p>
+			</div>
+		{% endif %}
+		<input class="next" type="submit" value="Submit">
+
+		<div class="blue_link">
+			<a href="/user/register">Or register</a>
+		</div>
+	</from>
+
+
+{% endblock %}

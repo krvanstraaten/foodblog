@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/style.css"/>
+		{% block head %}
+			<title>
+				{% block title %}{% endblock %}
+			</title>
+		{% endblock %}
+	</head>
+	<body>
+		<ul id="navbar">
+			<a href="/"><img alt="Bit Academy Logo" src="https://ams.jarvis.bit-academy.nl/assets/images/logo_white.svg"></a>
+			<li class="navitem">
+				<a href="/recipe">Recipes</a>
+			</li>
+			<li class="navitem">
+				<a href="/kitchen">Kitchens</a>
+			</li>
+			{# user content #}
+			{% if user.id %}
+				<li class="navitem end">
+					<a>{{user.username}}</a>
+				</li>
+				<li class="navitem">
+					<a href='/user/logout'>Log out</a>
+				</li>
+			{% elseif not user.id %}
+				<li class="navitem end">
+					<a href='/user/login'>Login</a>
+				</li>
+				<li class="navitem">
+					<a href='/user/register'>Register</a>
+				</li>
+			{% endif %}
+
+		</ul>
+		<div class="content"> {% block content %}{% endblock %}
+			</div>
+			<div id="footer"> {% block footer %}{% endblock %}
+				</div>
+
+			</body>
+		</html>

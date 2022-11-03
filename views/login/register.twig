@@ -1,0 +1,35 @@
+{% extends "/layouts/app.twig" %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block content %}
+
+	<form method="post" action="/user/registerPost" style="margin-top:5em">
+		<div style="display:flex; flex-direction:column; align-items:center;">
+			<img alt="Bit Academy Logo" src="https://ams.jarvis.bit-academy.nl/assets/images/logo_black.svg" width="200">
+			<b>
+				<h2 style="font-size:2.5em">Create a new account</h2>
+			</b>
+		</div>
+		{# login form #}
+		<label for="name" aria-label="User name"></label>
+		<input type="text" id="name" name="name" placeholder="User name"/>
+		<label for="psw" aria-label="Password"></label>
+		<input type="password" id="psw" name="psw" placeholder="Password"/>
+		<label for="confpsw" aria-label="Confirm password"></label>
+		<input type="password" id="confpsw" name="confpsw" placeholder="Confirm password"/>
+		{% if  message %}
+			<div class="error">
+				<p>{{message}}</p>
+			</div>
+		{% endif %}
+		<input class="next" type="submit" value="Submit">
+
+		<div class="blue_link">
+			<a href="/user/login">Or log in</a>
+		</div>
+	</from>
+
+
+{% endblock %}

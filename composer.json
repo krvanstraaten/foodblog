@@ -1,0 +1,14 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "symfony/asset": "^5.4",
+        "gabordemooij/redbean": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            "helpers/helpers.php"
+            ],
+        "classmap": ["controllers/"]
+    }
+
+}
